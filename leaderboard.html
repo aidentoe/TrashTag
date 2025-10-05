@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - TrashTag</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .leaderboard-item {
+            transition: all 0.3s ease;
+        }
+        .leaderboard-item:hover {
+            background-color: #F0FDF4;
+            transform: translateX(5px);
+        }
+        .rank-badge {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="flex-shrink-0 flex items-center">
+                        <i data-feather="trash-2" class="h-8 w-8 text-green-600"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-800">TrashTag</span>
+                    </span>
+                    <div class="hidden md:ml-6 md:flex md:space-x-8">
+                        <a href="index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Dashboard</a>
+                        <a href="challenges.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Challenges</a>
+                        <a href="leaderboard.html" class="border-green-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Leaderboard</a>
+                        <a href="organizations.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Organizations</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:ml-4 md:flex md:items-center">
+                        <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium">Login</button>
+                        <button class="ml-3 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Leaderboard Header -->
+    <div class="bg-green-600 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Global Leaderboard</h1>
+            <p class="text-green-100 text-lg">See who's leading the charge in making our planet cleaner</p>
+        </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex flex-wrap gap-4 justify-center">
+            <button class="bg-green-600 text-white px-6 py-2 rounded-full text-sm font-medium">Global</button>
+            <button class="bg-white text-gray-700 px-6 py-2 rounded-full text-sm font-medium border border-gray-300">This Month</button>
+            <button class="bg-white text-gray-700 px-6 py-2 rounded-full text-sm font-medium border border-gray-300">This Week</button>
+            <button class="bg-white text-gray-700 px-6 py-2 rounded-full text-sm font-medium border border-gray-300">Organizations</button>
+            <button class="bg-white text-gray-700 px-6 py-2 rounded-full text-sm font-medium border border-gray-300">Teams</button>
+        </div>
+    </div>
+
+    <!-- Leaderboard Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <!-- Header -->
+            <div class="grid grid-cols-12 gap-4 p-6 bg-gray-50 border-b font-semibold text-gray-700">
+                <div class="col-span-1">Rank</div>
+                <div class="col-span-5">Cleaner</div>
+                <div class="col-span-2 text-center">Points</div>
+                <div class="col-span-2 text-center">Cleanups</div>
+                <div class="col-span-2 text-center">Impact</div>
+            </div>
+
+            <!-- Leaderboard Items -->
+            <div class="divide-y divide-gray-100">
+                <!-- Rank 1 -->
+                <div class="leaderboard-item grid grid-cols-12 gap-4 p-6 items-center">
+                    <div class="col-span-1">
+                        <div class="rank-badge bg-yellow-400 text-white">1</div>
+                    </div>
+                    <div class="col-span-5 flex items-center">
+                        <img src="http://static.photos/people/40x40/10" alt="EcoWarrior42" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold">EcoWarrior42</div>
+                            <div class="text-sm text-gray-500">California, USA</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-center text-green-600 font-bold">8,425</div>
+                    <div class="col-span-2 text-center">127</div>
+                    <div class="col-span-2 text-center">
+                        <div class="inline-flex items-center bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">
+                            <i data-feather="award" class="w-3 h-3 mr-1"></i>
+                            Champion
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rank 2 -->
+                <div class="leaderboard-item grid grid-cols-12 gap-4 p-6 items-center">
+                    <div class="col-span-1">
+                        <div class="rank-badge bg-gray-300 text-white">2</div>
+                    </div>
+                    <div class="col-span-5 flex items-center">
+                        <img src="http://static.photos/people/40x40/11" alt="GreenGuru" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold">GreenGuru</div>
+                            <div class="text-sm text-gray-500">London, UK</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-center text-green-600 font-bold">7,892</div>
+                    <div class="col-span-2 text-center">115</div>
+                    <div class="col-span-2 text-center">
+                        <div class="inline-flex items-center bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                            <i data-feather="star" class="w-3 h-3 mr-1"></i>
+                            Elite
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rank 3 -->
+                <div class="leaderboard-item grid grid-cols-12 gap-4 p-6 items-center">
+                    <div class="col-span-1">
+                        <div class="rank-badge bg-amber-700 text-white">3</div>
+                    </div>
+                    <div class="col-span-5 flex items-center">
+                        <img src="http://static.photos/people/40x40/12" alt="TrashBuster" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold">TrashBuster</div>
+                            <div class="text-sm text-gray-500">Sydney, Australia</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-center text-green-600 font-bold">6,543</div>
+                    <div class="col-span-2 text-center">98</div>
+                    <div class="col-span-2 text-center">
+                        <div class="inline-flex items-center bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">
+                            <i data-feather="zap" class="w-3 h-3 mr-1"></i>
+                            Pro
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rank 4-10 -->
+                <div class="leaderboard-item grid grid-cols-12 gap-4 p-6 items-center">
+                    <div class="col-span-1">
+                        <div class="rank-badge bg-gray-100 text-gray-700">4</div>
+                    </div>
+                    <div class="col-span-5 flex items-center">
+                        <img src="http://static.photos/people/40x40/13" alt="CleanPlanet" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold">CleanPlanet</div>
+                            <div class="text-sm text-gray-500">Toronto, Canada</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-center text-green-600 font-bold">5,876</div>
+                    <div class="col-span-2 text-center">84</div>
+                    <div class="col-span-2 text-center">
+                        <div class="inline-flex items-center bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">
+                            <i data-feather="trending-up" class="w-3 h-3 mr-1"></i>
+                            Rising
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leaderboard-item grid grid-cols-12 gap-4 p-6 items-center">
+                    <div class="col-span-1">
+                        <div class="rank-badge bg-gray-100 text-gray-700">5</div>
+                    </div>
+                    <div class="col-span-5 flex items-center">
+                        <img src="http://static.photos/people/40x40/14" alt="EcoHero" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold">EcoHero</div>
+                            <div class="text-sm text-gray-500">Berlin, Germany</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-center text-green-600 font-bold">5,231</div>
+                    <div class="col-span-2 text-center">76</div>
+                    <div class="col-span-2 text-center">
+                        <div class="inline-flex items-center bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">
+                            <i data-feather="leaf" class="w-3 h-3 mr-1"></i>
+                            Green
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leaderboard-item grid grid-cols-12 gap-4 p-6 items-center">
+                    <div class="col-span-1">
+                        <div class="rank-badge bg-gray-100 text-gray-700">6</div>
+                    </div>
+                    <div class="col-span-5 flex items-center">
+                        <img src="http://static.photos/people/40x40/15" alt="WasteWarrior" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold">WasteWarrior</div>
+                            <div class="text-sm text-gray-500">Tokyo, Japan</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-center text-green-600 font-bold">4,987</div>
+                    <div class="col-span-2 text-center">72</div>
+                    <div class="col-span-2 text-center">
+                        <div class="inline-flex items-center bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                            <i data-feather="target" class="w-3 h-3 mr-1"></i>
+                            Focused
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leaderboard-item grid grid-cols-12 gap-4 p-6 items-center">
+                    <div class="col-span-1">
+                        <div class="rank-badge bg-gray-100 text-gray-700">7</div>
+                    </div>
+                    <div class="col-span-5 flex items-center">
+                        <img src="http://static.photos/people/40x40/16" alt="GreenThumb" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold">GreenThumb</div>
+                            <div class="text-sm text-gray-500">Paris, France</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-center text-green-600 font-bold">4,652</div>
+                    <div class="col-span-2 text-center">68</div>
+                    <div class="col-span-2 text-center">
+                        <div class="inline-flex items-center bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">
+                            <i data-feather="heart" class="w-3 h-3 mr-1"></i>
+                            Passionate
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leaderboard-item grid grid-cols-12 gap-4 p-6 items-center">
+                    <div class="col-span-1">
+                        <div class="rank-badge bg-gray-100 text-gray-700">8</div>
+                    </div>
+                    <div class="col-span-5 flex items-center">
+                        <img src="http://static.photos/people/40x40/17" alt="CleanSweep" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold">CleanSweep</div>
+                            <div class="text-sm text-gray-500">Mumbai, India</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-center text-green-600 font-bold">4,321</div>
+                    <div class="col-span-2 text-center">63</div>
+                    <div class="col-span-2 text-center">
+                        <div class="inline-flex items-center bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">
+                            <i data-feather="activity" class="w-3 h-3 mr-1"></i>
+                            Active
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leaderboard-item grid grid-cols-12 gap-4 p-6 items-center">
+                    <div class="col-span-1">
+                        <div class="rank-badge bg-gray-100 text-gray-700">9</div>
+                    </div>
+                    <div class="col-span-5 flex items-center">
+                        <img src="http://static.photos/people/40x40/18" alt="EcoPioneer" class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <div class="font-semibold">EcoPioneer</div>
+                            <div class="text-sm text-gray-500">São Paulo, Brazil</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-center text-green-600 font-bold">4,098</div>
+                    <div class="col-span-2 text-center">59</div>
+                    <div class="col-span-2 text-center">
+                        <div class="inline-flex items-center bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">
+                            <i data-feather="compass" class="w-3 h-3 mr-1"></i>
+                            Explorer
+                        </div>
+                    </div>
+                </div>
+
+                <div class="leaderboard-item grid grid-cols-12 gap-4 p-6 items-center">
+                    <div class="col-span-1">
+                        <div class="rank-badge bg-gray-极速赛车开奖官网历史记录-【网址:mk99.cc】-极速赛车开奖官网历史记录bg-gray-100 text-gray-700">10</div>
+                    </div>
+                    <div class="col-span-5 flex items-center">
+                        <img src="http://static.photos/people/40x40/19" alt="NatureGuard" class="w-10 h-10 rounded-full mr-极速赛车开奖官网历史记录-【网址:mk99.cc】-极速赛车开奖官网历史记录3">
+                        <div>
+                            <div class="font-semibold">NatureGuard</div>
+                            <div class="text-sm text-gray-500">Cape Town, South Africa</div>
+                        </div>
+                    </div>
+                    <div class="col-span-2 text-center text-green-600 font-bold">3,876</div>
+                    <div class="col-span-2 text-center">55</div>
+                    <div class="col-span-2 text-center">
+                        <div class="inline-flex items-center bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+                            <i data-feather="shield" class="w-3 h-3 mr-1"></i>
+                            Guardian
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Your Rank Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-green-50 rounded-xl p-6 shadow-md">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Your Current Rank</h3>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="rank-badge bg-gray-200 text-gray-700 mr-4">47</div>
+                    <div>
+                        <div class="font-semibold">YourUsername</div>
+                        <div class="text-sm text-gray-600">1,245 points • 23 cleanups</div>
+                    </div>
+                </div>
+                <button class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg font-medium">
+                    Improve Rank
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semib极速赛车开奖官网历史记录-【网址:mk99.cc】-极速赛车开奖官网历史记录old mb-4">TrashTag</h3>
+                    <p class="text-gray-400">Making the world cleaner, one tag at a time.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Dashboard</a></li>
+                        <li><a href="challenges.html" class="text-gray-400 hover:text极速赛车开奖官网历史记录-【网址:mk99.cc】-极速赛车开奖官网历史记录-white">Challenges</a></li>
+                        <li><a href="leaderboard.html" class="text-gray-400 hover:text-white">Leaderboard</a></li>
+                        <li><a href="organizations.html" class="text-gray-400 hover:text-white">Organizations</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <极速赛车开奖官网历史记录-【网址:mk99.cc】-极速赛车开奖官网历史记录li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Support</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Stay Connected</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="twitter"></极速赛车开奖官网历史记录-【网址:mk99.cc】-极速赛车开奖官网历史记录i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><极速赛车开奖官网历史记录-【网址:mk99.cc】-极速赛车开奖官网极速赛车开奖官网历史记录-【网址:mk99.cc】-极速赛车开奖官网历史记录历史记录i data-feather="instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 TrashTag. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>
