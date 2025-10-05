@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashTag | About Us</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#4ade80',
+              secondary: '#38bdf8',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .floating { animation: floating 3s ease-in-out infinite; }
+      @keyframes floating {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between">
+        <div class="flex space-x-7">
+          <div>
+            <a href="index.html" class="flex items-center py-4 px-2">
+              <span class="font-bold text-2xl text-primary flex items-center">
+                <i data-feather="trash-2" class="mr-2"></i> TrashTag
+              </span>
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-1">
+            <a href="index.html" class="py-4 px-2 text-gray-500 hover:text-green-600 transition duration-300">Home</a>
+            <a href="#" class="py-4 px-2 text-gray-500 hover:text-green-600 transition duration-300">Challenges</a>
+            <a href="#" class="py-4 px-2 text-gray-500 hover:text-green-600 transition duration-300">Leaderboard</a>
+            <a href="organizations.html" class="py-4 px-2 text-gray-500 hover:text-green-600 transition duration-300">Organizations</a>
+            <a href="about.html" class="py-4 px-2 text-green-600 font-semibold">About</a>
+          </div>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="outline-none mobile-menu-button">
+            <i data-feather="menu" class="w-6 h-6 text-gray-500"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-20 bg-gradient-to-r from-primary to-secondary">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Our Story</h1>
+      <p class="text-xl text-white mb-10 max-w-2xl mx-auto">How a simple observation turned into a mission to clean our planet</p>
+    </div>
+  </section>
+
+  <!-- Our Inspiration -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+          <div class="relative floating">
+            <div class="absolute -inset-4 bg-primary rounded-full opacity-20 blur"></div>
+            <img src="http://static.photos/nature/640x360/201" alt="Littered Park" class="relative rounded-2xl shadow-xl border-4 border-white">
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">The Inspiration</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            As high school students, we were constantly frustrated by seeing our local parks and walkways filled with litter, especially after storms when garbage would accumulate unchecked.
+          </p>
+          <p class="text-lg text-gray-600 mb-6">
+            We realized that traditional cleanup efforts weren't engaging enough to inspire consistent participation, and that's when we came up with the idea to combine environmentalism with technology and gamification.
+          </p>
+          <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-secondary">
+            <p class="text-gray-700 italic">
+              "We wanted to make cleaning up fun and rewarding - turning an environmental responsibility into an engaging challenge that people would want to participate in."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Solution -->
+  <section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row-reverse items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pl-10">
+          <div class="relative floating">
+            <div class="absolute -inset-4 bg-secondary rounded-full opacity-20 blur"></div>
+            <img src="http://static.photos/technology/640x360/202" alt="App Screenshot" class="relative rounded-2xl shadow-xl border-4 border-white">
+          </div>
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Tech-Driven Solution</h2>
+          <p class="text-lg text-gray-600 mb-6">
+            TrashTag was born from our vision to create a platform that makes environmental cleanup:
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="text-primary mr-3 mt-1"></i>
+              <span class="text-gray-700"><strong>Gamified</strong> - Earn points, complete challenges, and climb leaderboards</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="text-primary mr-3 mt-1"></i>
+              <span class="text-gray-700"><strong>Collaborative</strong> - Work with friends, organizations, and your community</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="text-primary mr-3 mt-1"></i>
+              <span class="text-gray-700"><strong>Visible Impact</strong> - Track your environmental contributions in real time</span>
+            </li>
+          </ul>
+          <p class="text-lg text-gray-600">
+            We built TrashTag using modern web technologies to ensure it's accessible to everyone who wants to make a difference.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Team -->
+  <section class="py-20">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Meet The Team</h2>
+      <div class="flex flex-wrap -mx-4 justify-center">
+        <div class="w-full md:w-1/3 lg:w-1/4 px-4 mb-8">
+          <div class="bg-white p-8 rounded-xl shadow-lg text-center h-full">
+            <img src="http://static.photos/people/200x200/301" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-6">
+            <h3 class="text-xl font-semibold mb-2">Leo Tang</h3>
+            <p class="text-gray-600">Co-Founder, Lead Programmer</p>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 lg:w-1/4 px-4 mb-8">
+          <div class="bg-white p-8 rounded-xl shadow-lg text-center h-full">
+            <img src="http://static.photos/people/200x200/302" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-6">
+            <h3 class="text-xl font-semibold mb-2">Aiden To</h3>
+            <p class="text-gray-600">Co-Founder, Programmer</p>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 lg:w-1/4 px-4 mb-8">
+          <div class="bg-white p-8 rounded-xl shadow-lg text-center h-full">
+            <img src="http://static.photos/people/200x200/303" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-6">
+            <h3 class="text-xl font-semibold mb-2">Jake Joseph</h3>
+            <p class="text-gray-600">Co-Founder, Programmer</p>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 lg:w-1/4 px-4 mb-8">
+            <div class="bg-white p-8 rounded-xl shadow-lg text-center h-full">
+              <img src="http://static.photos/people/200x200/303" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-6">
+              <h3 class="text-xl font-semibold mb-2">Sean Aba</h3>
+              <p class="text-gray-600">Co-Founder, Programmer</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="mb-8 md:mb-0">
+          <h3 class="text-xl font-bold mb-4 flex items-center">
+            <i data-feather="trash-2" class="mr-2"></i> TrashTag
+          </h3>
+          <p class="text-gray-400 max-w-xs">Join the movement to clean our planet and earn rewards for your environmental contributions.</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <h4 class="font-semibold mb-4">Navigation</h4>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Leaderboard</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Challenges</a></li>
+              <li><a href="about.html" class="text-gray-400 hover:text-white transition">About</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Organization</h4>
+            <ul class="space-y-2">
+              <li><a href="organizations.html" class="text-gray-400 hover:text-white transition">Features</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy</a></li>
+              <li><a href="#" class="text-gray-400 hover:text-white transition">Terms</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Social</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition">
+                <i data-feather="facebook"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition">
+                <i data-feather="twitter"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition">
+                <i data-feather="instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">© 2023 TrashTag. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      feather.replace();
+    });
+  </script>
+</body>
+</html>
